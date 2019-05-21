@@ -1,0 +1,40 @@
+"result": \{\
+        "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJiZTFiMDMwYi02Y2ZkLTQ0MWQtYWJhNC0zNzgzM2E4NWUzOTUiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbiIsInN1YiI6ImJlMWIwMzBiLTZjZmQtNDQxZC1hYmE0LTM3ODMzYTg1ZTM5NSIsImp0aSI6IjFhYjFkOTMxLTEwNTktNGU4ZS1iOGRmLTlmZDgwZjNjY2MwZiIsImV4cCI6MTU1NDEyODM5NywiaXNzIjoiZG90bmV0X2Jhcm5fbWFuYWdlciIsImF1ZCI6IkJhcm5NYW5hZ2VyQVBJIn0.nONikqmPLsqOEljgZ-fXwoIhseOtAHlknIOQPxrSLKo",\
+        "tokenType": "bearer",\
+        "expiration": "04/01/2019 02:19:57",\
+        
+		"user": \{\
+		
+            "id": "be1b030b-6cfd-441d-aba4-37833a85e395",\
+            "username": "sandeshkumar@folio3.com",\
+            "firstName": "Sandesh",\
+            "lastName": "Kumar",\
+            "fullName": "Sandesh Kumar",\
+            "email": "sandeshkumar@folio3.com",\
+            "role": "1",\
+            "type": null,\
+            "isActive": true,\
+            "createdOn": "0001-01-01T00:00:00",\
+            "updatedOn": "2019-03-28T17:08:10.8617607",\
+            "createdBy": null,\
+            "updatedBy": "be1b030b-6cfd-441d-aba4-37833a85e395",\
+            "isDeleted": false,\
+            "divisionId": 7,\
+			
+            "division": \{\
+                "divisionNumber": "Division7",\
+                "revisionDateTime": null,\
+                "revisionNote": null,\
+                "status": false,\
+                "title": "DivisionTitle7",\
+                "id": 7,\
+                "createdOn": "2019-03-05T15:57:25.0219122",\
+                "updatedOn": "2019-03-05T15:57:25.0219122",\
+                "createdBy": null,\
+                "updatedBy": null,\
+                "isActive": true,\
+                "isDeleted": false\
+            \}\
+			
+        \}\
+    \},\
