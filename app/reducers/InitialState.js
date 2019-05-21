@@ -11,5 +11,23 @@ var InitialState =  {
 		fullName:'',
 		token: ''
 	},
+	navigatorState:{
+		selectedScreen: ''
+	},
+	workOrderState:{
+		workOrderNo:'',
+		taskTableData: [],
+		selectedTask: {
+			taskID: '',
+			taskNumber: '',
+			revisionDate: '',
+			division: '',
+			workOrderNumber: '',
+			assign: '',
+			requirement: '', 
+			instruction: '',
+			formFields:[]
+		}
+	},
 };
 export {InitialState};

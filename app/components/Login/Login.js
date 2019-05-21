@@ -6,21 +6,22 @@ import {
 } from 'react-native';
 import TextInputComponent from '../Utils/TextInputComponent';
 import dataController from '../../resources/localDB/DataController';
-import { ValidateUser } from '../WebServices/ValidateUser';
+import { ValidateUser } from '../WebServices/BarnManagerApi';
 import { LogsInfo } from '../Utils/LogsInfo';
 import { loginStyles } from './Styles';
 import { Constants } from '../../resources/constants/Constants';
 import { loginSuccess } from '../../actions/LoginActions';
 
+import { NavigationActions, StackActions } from 'react-navigation';
 var db = SQLite.openDatabase(Constants.dbName, "1.0", "BarnManager Database", 200000);
 
 class Login extends Component{
     constructor(props) {
         super(props);
-        //this.store = this.props.store;      
+        //this.store = this.props.store;      "sandeshkumar@folio3.com"
         this.state = {
-            username: "",
-            password: "",
+            username: "saad",
+            password: "Click123@",
             token: '',
             error: false,
             errorMsg: '',
@@ -43,7 +44,12 @@ class Login extends Component{
         this.resetErrorMessage();
     };
     navigateToDashboard = () => {
-        this.props.navigation.navigate('Dashboard');
+        const resetAction = StackActions.reset({
+            index: 0,
+            key: null, // <-- this
+            actions: [NavigationActions.navigate({ routeName: "DashboardDrawerNavigator" })]
+        });
+        this.props.navigation.dispatch(resetAction);
     };
 
     userAuthenticated = (user, accessToken) => {
@@ -73,7 +79,8 @@ class Login extends Component{
     onLoginClicked = () => {
         if(this.state.username.trim() != '' && this.state.password.trim != ''){
             LogsInfo('username and password is not empty');
-            dataController.validateUser(db, this.state, this.validateUserCallback);
+            //dataController.validateUser(db, this.state, this.validateUserCallback);
+            this.callRestService();
         }
     };
 
@@ -101,7 +108,7 @@ class Login extends Component{
                 <View style={loginStyles.logoContainerStyles}>
                     <Image source={require('../../images/logo.jpeg')} style={{width: 288, height: 87}}/>
                 </View>
-                <TouchableWithoutFeedback onPress={Keyboard.dismiss} style={loginStyles.inputContainerParentStyles} >                        
+                                       
                     <View style={loginStyles.inputContainerStyles}>
                         <Text style={loginStyles.loginTextStyles}>Login</Text>
                         <TextInputComponent
@@ -123,7 +130,7 @@ class Login extends Component{
                         </TouchableOpacity>
                         <View><Text style={loginStyles.loginInvalidUserMsg}>{this.state.errorMsg}</Text></View>
                     </View>
-                </TouchableWithoutFeedback>
+               
                 <View style={loginStyles.bottomContainerStyles}/>
             </View>
         )
@@ -143,7 +150,7 @@ function mapDispatchToProps(dispatch) {
     return {
         authSuccess: (token, userFullName = '') => {
             AsyncStorage.multiSet([['token', token], ['authenticated', '1']]);
-            dispatch( loginSuccess(userFullName) );
+            dispatch( loginSuccess(userFullName, token) );
         }
     }
 }

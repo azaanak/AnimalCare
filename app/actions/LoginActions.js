@@ -1,9 +1,10 @@
 import { Constants } from '../resources/constants/Constants';
 
-export function loginSuccess(loginUserFullName) {
+export function loginSuccess(loginUserFullName, token) {
 	return {
 		type: Constants.actionTypes.LOGIN_SUCCESS,
-		loginUserFullName: loginUserFullName
+		loginUserFullName: loginUserFullName,
+		token: token
 	};
 }
 

@@ -1,18 +1,20 @@
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import Login from '../components/Login/Login';
-import Dashboard from '../components/Dashboard/Dashboard';
+import DrawerNavigator from './DrawerNavigator';
 
 const MainNavigator = createStackNavigator({
   Login: { screen: Login,
     navigationOptions:{
-      title:'Login',
-      headerLeft: null
+      title:null,
+      headerLeft: null,
+      headerStyle: {  maxHeight: 0, backgroundColor: 'white', height: 50 }
     }
   },
-  Dashboard: { screen: Dashboard,
+  DashboardDrawerNavigator: { screen: DrawerNavigator,
     navigationOptions:{
-      title:'Dashboard',
-      headerLeft: null
+      title: null,
+      headerLeft: null,
+      headerStyle: {  maxHeight: 0, backgroundColor: 'white', height: 0 }
     }
   }
 },  {

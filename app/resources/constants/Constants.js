@@ -3,7 +3,10 @@ var Constants = {
         LOGIN_SUCCESS: 'LOGIN_SUCCESS',
         LOGOUT: 'LOGOUT',
         APP_LOADED: 'APP_LOADED',
-        GET_LOGIN_STATE: 'GET_LOGIN_STATE'
+        GET_LOGIN_STATE: 'GET_LOGIN_STATE',
+        SELECTED_SCREEN: 'SELECTED_SCREEN',
+        WORK_ORDER_CHANGED: 'WORK_ORDER_CHANGED',
+        SELECTED_TASK: 'SELECTED_TASK'
 	},
     dbName: 'barnManagerSqlite.db',
     tableName: {
